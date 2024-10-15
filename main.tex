@@ -8,8 +8,6 @@
 \graphicspath{{./figures} {./templates/figures}}
 \makeatother
 
-\addbibresource{bibliography.bib}
-
 \title{Applications of Autonomous Drones for Non-Terrestrial Networks in Remote Areas}
 \author{Andrés Navarro Pedregal}
 \degree{Data Science and Engineering and Telecommunication Technologies Engineering}
@@ -23,6 +21,9 @@
   pdfsubject=Final Thesis,
   pdfkeywords={Final Thesis, Andres Navarro Pedregal, Data Science and Engineering},
 }
+
+\addbibresource{./bibliography.bib}
+\setcounter{tocdepth}{1} % show only chapters and sections in the table of contents
 
 \begin{document}
 
@@ -57,19 +58,19 @@ Gracias
 \vskip 1.0em \@plus\p@
 \makeatother
 
-\blankpage
+\blankpage%
 \chapter*{List of Figures}
 
-\blankpage
+\blankpage%
 \chapter*{List of Tables}
 
-\blankpage
+\blankpage%
 \chapter*{Acronyms}
 
-\blankpage
+\blankpage%
 \chapter*{Nomenclature}
 
-\blankpage
+\blankpage%
 
 \mainmatter%
 
@@ -104,8 +105,6 @@ Gracias
 \input{src/5_conclusions/regulatory_framework}
 
 \blankpage%
-\chapter*{Bibliography}
-\addcontentsline{toc}{part}{Bibliography} % add bibliography to the TOC
 \printbibliography%
 %
 \end{document}

@@ -1,6 +1,6 @@
 PARENT_MAKEFILE := ./templates/Makefile
 
-OUTPUT_PDF := Final_Thesis_Andres_Navarro_Pedregal_Data_Science.pdf
+OUTPUT_PDF := Final_Thesis_Bachelor_Data_Science_Andres_Navarro_Pedregal.pdf
 VERSION := v0.1.0
 
 export OUTPUT_PDF
