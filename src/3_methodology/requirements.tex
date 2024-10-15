@@ -1,3 +1,79 @@
 \chapter{Requirements}
 
-Based on careful analysis
+Based on careful analysis of the conclusions from the current trends in UAVs outlined in \autoref{ch:modern_trends} and the objectives reviewed in \autoref{ch:objectives}, the following requirements are established for the high-level system as well as the detailed requirements for the UAV, control station, and software platform.
+
+\section{High-level System Requirements}
+
+The high-level system requirements are as follows:
+
+\begin{itemize}
+  \item The system must be able to operate in remote areas with limited infrastructure, such as roads, electricity, and internet connectivity.
+
+  \item The system must be able to be monitored remotely, with the ability to communicate with a ground station via a 4G or 3G connection.
+
+  \item The system must be cost-effective, with the ability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
+
+  \item The system must be modular, allowing for the integration of different sensors and payloads for different applications, as well as, the scalability of the system to include multiple UAVs working together in a coordinated manner.
+
+  \item The system must be able to perform reconnaissance tasks autonomously, with the ability to take off, land, and navigate given a set of waypoints.
+
+  \item The system must comply with the applicable regulatory framework for UAVs in the country of operation, Spain, as well as the European Union regulations. See \autoref{ch:regulatory_framework} for more information.
+\end{itemize}
+
+\section{UAV Requirements}
+
+The UAV requirements are as follows:
+
+\begin{itemize}
+  \item The UAV must be able to be controlled remotely, with the ability to communicate with a ground station in real-time.
+
+  \item The UAV must be able to take off, land, and navigate autonomously, with the ability to update its flight plan in real-time.
+
+  \item The UAV must be able to process data in real-time, with the ability to relay the information to the ground station.
+
+  \item The UAV must be able to carry different payloads and sensors for different applications up to a maximum payload weight of 2 kg, with the ability to adapt to different reconnaissance tasks.
+
+  \item The UAV must be able to fly for a minimum of 30 minutes, without the need for recharging.
+
+  \item The UAV must be have a failsafe mechanism, that is it must be able to return to the ground station in case of loss of communication or other critical failures.
+
+  \item The UAV must be able to keep a fixed altitude and position.
+
+  \item The UAV must comply with the EASA regulations for the Open Category, with a maximum limit set at 25 kg of MTOW and 3 meters of wingspan.
+
+  \item The UAV must be able to perform reconnaissance tasks, such as mapping, surveillance, and monitoring the environment.
+\end{itemize}
+
+\section{Control Station Requirements}
+
+The control station requirements are as follows:
+
+\begin{itemize}
+  \item The control station must be able to receive telemetry data from the UAV in real-time, with the ability to send commands to the UAV to update its flight plan.
+
+  \item The control station must be able to be used remotely, with the ability to communicate with the UAV via a 4G or 3G connection.
+
+  \item The control station must be able to create a geofence around the area of operation, with the ability to monitor the UAV's position and altitude in real-time.
+
+  \item The control station must have the capability be able to track multiple UAVs simultaneously, with the ability to coordinate their flight plans and tasks.
+
+  \item The control station must log all telemetry data and flight information, with the ability to analyze the data and generate reports.
+\end{itemize}
+
+\section{Software Platform Requirements}
+
+The software platform requirements are as follows:
+
+\begin{itemize}
+  \item The software platform must be able to run on a variety of operating systems, with the ability to communicate with the UAVs and the control station in real-time.
+
+  \item The software platform must be able to be used remotely, with the ability to access the UAVs and the control station via a 4G or 3G connection.
+
+  \item The software platform must be reliable, secure, and easy to use, allowing for the programming of the UAVs to perform specific tasks and the coordination of multiple UAVs in a swarm.
+
+  \item The software platform must be customizable, allowing for the integration of new features and the modification of existing ones, as well as, the addition of new UAVs to the system and different types of reconnaissance tasks.
+
+  \item The software platform must have alerting and notification capabilities, with the ability to send alerts and notifications to the user in case of critical events or failures.
+
+  \item The software platform must have a user-friendly interface, with the ability to display telemetry data and flight information in real-time, as well as, the ability to monitor the UAVs in real-time.
+\end{itemize}
