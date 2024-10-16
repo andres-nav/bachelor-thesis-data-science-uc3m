@@ -24,22 +24,23 @@
 
 \addbibresource{./bibliography.bib} % load the bibliography file
 
-\setcounter{tocdepth}{1} % show only chapters and sections in the table of contents
-
 \loadglsentries{acronyms} % load the acronyms file
 
 \begin{document}
 
+% \setcounter{tocdepth}{0} % Show only parts and chapters in the table of contents
+
 \frontmatter
 \maketitle
-\blankpage
+
+\blankpage%
 \chapter*{Abstract}
 
 this is an abstract
 
 \textbf{Keywords:} keyword1, keyword2, keyword3
 
-\blankpage
+\blankpage%
 
 \chapter*{Acknowledgments}
 \begingroup
@@ -52,19 +53,22 @@ Thanks
 Gracias
 
 \endgroup
-\blankpage
+
+\blankpage%
 
 \renewcommand{\contentsname}{Table of Contents}
 \tableofcontents
 
-
 \blankpage%
+
 \listoffigures
 
 \blankpage%
+
 \listoftables
 
 \blankpage%
+
 \printglossary[type=\acronymtype,style=long]
 
 \blankpage%
