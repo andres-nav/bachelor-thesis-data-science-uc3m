@@ -1,21 +1,20 @@
 \chapter{Statement of the problem}
+\label{ch:statement_of_problem}
 
-The current research area in non-terrestrial networks is focused on the development of satellites based on Geostationary Earth Orbit (GEO) or Low Earth Orbit (LEO) constellations \autocite{non_terrestial_networks_trends}. This devices have a high cost and are not easily customizable, therefore, they are not suitable for most research groups and individuals. On the other hand, drones are a more affordable and customizable solution, but they have a limited range and are not suitable for long-term missions.
+Current research in the domain of \gls{ntn} primarily focuses on the development of satellite constellations in \gls{geo} and \gls{leo} \autocite{non_terrestial_networks_trends}. While these satellites offer significant potential, their high costs and limited customizability render them impractical for many research groups and individual researchers. Moreover, the complexity of launching and maintaining satellites in orbit presents a significant barrier to entry for many interested parties. In contrast, drones present a more affordable and adaptable solution for rapid deployment of communication networks in remote areas as well as low-altitude surveillance and monitoring missions.
 
-The main problem that drones have currently is that there is no widely available solution that allows the creation of a drone that can perform autonomous missions in remote areas. The current solutions are either expensive, closed-source drones that are not customizable, or require a lot of infrastructure to operate, such as a ground station, a high-speed internet connection, etc. This limits the potential applications of drones in remote areas, where infrastructure is limited or non-existent.
+The core challenge addressed in this thesis is the lack of widely accessible solutions for the deployment of autonomous drones in remote areas. Presently, available solutions are either expensive, proprietary systems that lack customization, or they require extensive infrastructure, such as ground stations or high-speed internet connectivity. These requirements severely limit the application of drones in areas with minimal or no infrastructure.
 
-The main problem that this work will address is the lack of comprehensive, open-source, and affordable solutions for the development of drones that can perform autonomous missions in remote areas.
-
-As the scope of this problem is broad, it needs to be narrowed down to a specific problem that can be solved in this thesis. The environment that will be modeled in this thesis will have the following characteristics:
+This work seeks to address the gap by developing a comprehensive, open-source, and cost-effective solution for autonomous drone missions in remote environments. Given the broad nature of this problem, the scope of this thesis will be narrowed to a specific environment and use case, as outlined below:
 
 \begin{itemize}
-  \item The environment will be a remote area with limited infrastructure, such as a forest, a desert, or a mountain. In this case study, the environment will be a esplanade, that is a flat area with no obstacles such as buildings, trees, or mountains. This will allow the drone to fly freely without the risk of crashing into obstacles.
+  \item \textbf{Environment:} The modeled environment will be a remote area with minimal infrastructure, such as a forest, desert, or mountain. Specifically, the case study will involve an esplanade—a flat area devoid of significant obstacles like buildings or trees—allowing the drone to operate without the risk of collision. Moreover, \gls{4g} or \gls{5g} connectivity will be assumed to be available, enabling the drone to communicate with a ground station.
 
-  \item The environment will have a clear sky, with no interference from other drones, airplanes, or other sources of electromagnetic interference. Furthermore, the environment will have a low level of electromagnetic interference and a temperature close to the standard temperature and pressure (STP) conditions of 15°C and 1013 hPa.
+  \item \textbf{Atmospheric Conditions:} The selected environment will feature a clear sky, with minimal electromagnetic interference from other sources such as drones or aircraft. Additionally, the conditions will approximate \gls{stp} of \SI{15}{\degreeCelsius} and \SI{1013}{\hecto\pascal}.
 
-  \item The type of operations that the aircraft will engage in will always be withing Visual Line of Sight (VLOS) of the operator and below 120 meters of altitude. Moreover, the drone designed will not exceed 25 kg of Maximum Takeoff Weight (MTOW). This is to comply with the current regulations in Spain and most of the world.
+  \item \textbf{Operational Parameters:} The drone operations will be confined to \gls{vlos} and an altitude below \SI{120}{\metre}, ensuring compliance with current aviation regulations in Spain and most countries. The \gls{mtow} of the drone will not exceed \SI{25}{\kilogram}.
 
-  \item The hardware that will be used in the drone will be off-the-shelf components that are widely available and affordable. This will allow the drone to be easily replicated by other research groups and individuals.
+  \item \textbf{Hardware:} The drone will be constructed using commercially available, off-the-shelf components to ensure affordability and ease of replication for other research groups and individuals.
 
-  \item The work will be focus on human rescue operations, such as searching for missing people, locating survivors in disaster areas, or monitoring the environment for signs of danger. This is not the only application of drones in remote areas, but it is a promising one that can have a positive impact on society.
+  \item \textbf{Application:} This work will focus on the application of drones in human rescue missions, such as search and rescue operations in disaster-stricken areas or monitoring remote environments for signs of danger. While there are other potential applications of drones in remote areas, human rescue offers significant societal benefits.
 \end{itemize}

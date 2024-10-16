@@ -22,8 +22,11 @@
   pdfkeywords={Final Thesis, Andres Navarro Pedregal, Data Science and Engineering},
 }
 
-\addbibresource{./bibliography.bib}
+\addbibresource{./bibliography.bib} % load the bibliography file
+
 \setcounter{tocdepth}{1} % show only chapters and sections in the table of contents
+
+\loadglsentries{acronyms} % load the acronyms file
 
 \begin{document}
 
@@ -40,7 +43,7 @@ this is an abstract
 
 \chapter*{Acknowledgments}
 \begingroup
-\let\clearpage\relax % This temporarily disables \clearpage
+\let\clearpage\relax % This temporarily disables \clearpage so the Agradecimientos chapter is on the same page
 
 Thanks
 
@@ -51,24 +54,18 @@ Gracias
 \endgroup
 \blankpage
 
-\chapter*{Table of Contents}
+\renewcommand{\contentsname}{Table of Contents}
+\tableofcontents
 
-\makeatletter
-\@starttoc{toc}
-\vskip 1.0em \@plus\p@
-\makeatother
 
 \blankpage%
-\chapter*{List of Figures}
+\listoffigures
 
 \blankpage%
-\chapter*{List of Tables}
+\listoftables
 
 \blankpage%
-\chapter*{Acronyms}
-
-\blankpage%
-\chapter*{Nomenclature}
+\printglossary[type=\acronymtype,style=long]
 
 \blankpage%
 
@@ -82,9 +79,14 @@ Gracias
 \input{src/document_structure}
 \input{src/methodology_approach}
 
+\part{Theoretical Background}
+
+\input{src/uav}
+\input{src/non_terrestrial_networks}
+\input{src/deep_learning}
+
 \part{State of the art}
 
-\input{src/overview_uav}
 \input{src/historical_development}
 \input{src/types_technologies}
 \input{src/modern_trends}
