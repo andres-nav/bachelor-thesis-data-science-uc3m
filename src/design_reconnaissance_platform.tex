@@ -1,0 +1,27 @@
+\section{Reconnaissance Platform}\label{sec:reconnaissance_platform}
+
+The reconnaissance platform is the system that processes the data collected by the peripherals and the sensors on the \gls{uav} and provides insights to the end-user for the different reconnaissance tasks. The reconnaissance platform is responsible detecting and tracking objects, monitoring the environment, and generating alerts and notifications in case of critical events or failures. The reconnaissance platform is also responsible for coordinating the flight plans of the \glspl{uav} in a swarm, as well as designing the missions for the \glspl{uav} to perform specific tasks.
+
+The components chosen for the reconnaissance platform were divided into two main components depending on where they run, the on-board reconnaissance platform and the off-board reconnaissance platform.
+
+\subsection{On-Board Reconnaissance Platform}\label{subsec:on-board_reconnaissance_platform}
+
+The on-board reconnaissance platform is the system that runs on the \gls{uav} and is responsible for processing the data collected by the \gls{uav} and providing insights to the end-user. The on-board reconnaissance platform is composed of a on-board computer and a communication module to communicate with the off-board reconnaissance platform.
+
+For the on-board computer, multiple options were considered as represented in \todo{add table reference}. The main use case for the reconnaissance platform is to process the data collected by the \gls{uav} in real-time and provide insights to the end-user. For this case, a computer with a high processing power, specially in the \gls{gpu}, is required as deep learning algorithms are used to detect and track objects in the environment. The on-board computer chosen for the reconnaissance platform was the \todo{add ref to where we bought them} depicted in \todo{add figure}, as it provides a good balance between processing power, reliability, and price-performance ratio. The reason to choose this on-board computer is that it provides the highest processing power commercially available. Having a stable and reliable on-board computer is crucial for the \gls{uav} design, as it allows for the \gls{uav} to process the data collected in real-time and provide insights to the end-user. Moreover, it is widely used in the industry and has a large community of developers, which makes it easier to find support and documentation.
+
+\todo{add table with the on-board computer options}
+
+\todo{add figure of the on-board computer}
+
+For the communication module, a \gls{4g} communication module was chosen, as it provides a high bandwidth required to send the data collected by the \gls{uav} in real-time to the off-board reconnaissance platform and a simple yet robust communication system. The communication module chosen for the on-board reconnaissance platform was the \todo{add ref to where we bought them} depicted in \todo{add figure}, as it provides a good balance between bandwidth, reliability, and price-performance ratio. For the use case of this project, a \gls{4g} communication module was enough as the environment where the \gls{uav} will operate has a good \gls{4g} coverage. On the other hand, if the \gls{uav} will operate in remote areas with limited infrastructure, a \gls{rf} communication module would be more suitable.
+
+\todo{add figure of the communication module}
+
+\subsection{Off-Board Reconnaissance Platform}\label{subsec:off-board_reconnaissance_platform}
+
+The off-board reconnaissance platform is the system that runs on a server and is responsible for coordinating the missions of the \glspl{uav} in a swarm, as well as generating reports and analyzing the data collected by the \glspl{uav}. The off-board reconnaissance platform is composed of a server, a database, and a communication module to communicate with the on-board reconnaissance platform.
+
+For the server, multiple options were considered as represented in \todo{add table reference}. The main use case for the reconnaissance platform is to process the data collected by the \glspl{uav} in real-time and provide insights to the end-user. For this case, a server with a stable and reliable connection is required. Moreover, the server should be able to be accessed remotely from anywhere in the world, as the end-user may be located in a different location than the server. For this the option that was chosen was the \todo{add ref to where we bought them} as it provides the best price-ease of use ratio. The reason to choose a cloud provider is that it provides a stable and reliable connection, as well as the ability to be accessed remotely from anywhere in the world. Moreover, it is widely used in the industry and has a large community of developers, which makes it easier to find support and documentation.
+
+\todo{add table with the server options}

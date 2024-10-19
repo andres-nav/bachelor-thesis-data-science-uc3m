@@ -1,0 +1,23 @@
+\section{Communication System}\label{sec:communication_system}
+
+The communication system is the system that allows the \gls{uav} to communicate with the ground station in real-time, as well as providing the connection to the reconnaissance platform. The communication system is responsible for sending telemetry data from the \gls{uav} to the ground station, receiving commands from the ground station to update the \gls{uav}'s flight plan, and sending the data collected by the \gls{uav} to the reconnaissance platform for further analysis. Different communication systems can be used depending on the use case, such as \gls{4g}, \gls{3g}, \gls{wifi}, or \gls{rf}, and the environment where the \gls{uav} will operate. The characteristics to consider when choosing a communication system can be seen in \todo{add ref to the table in the requirements chapter}.
+
+\todo{add table with the communication system options}
+
+For this project, two comunication systems were chosen the on-board communication system and the off-board communication system.
+
+\subsection{On-Board Communication System}\label{subsec:on-board_communication_system}
+
+The on-board communication system is the system that connects the \gls{uav} with the ground station in real-time. The on-board communication system is composed of a communication module that sends telemetry data from the \gls{uav} to the ground station and receives commands from the ground station to update the \gls{uav}'s flight plan. The on-board communication system is responsible for providing a stable and reliable connection between the \gls{uav} and the ground station, as well as a high bandwidth to send the data collected by the \gls{uav} to the reconnaissance platform. The main requirements for the on-board communication system are a high reliability, a low latency, and long range.
+
+For this case, a \gls{rf} communication module was chosen, as it satisfies the requirements for the on-board communication system as well as not needing a cellular network to operate, thus making it more versatile and ideal to operate in remote areas. The \gls{rf} communication module chosen for the on-board communication system was the \todo{add ref to where we bought them} depicted in \todo{add figure}, as it provides a good balance between reliability, latency, and range. The reason to choose a \gls{rf} communication module is that it provides a stable and reliable connection, as well as a low latency and long range. Moreover, it is the defacto standard for \gls{uav} communication systems, as it provides a good price-performance ratio.
+
+\todo{add figure of the communication module}
+
+\subsection{Off-Board Communication System}\label{subsec:off-board_communication_system}
+
+The off-board communication system is the system that connects the on-board reconnaissance platform with the off-board reconnaissance platform. The off-board communication system is composed of a communication module that sends the data collected by the \gls{uav} to the off-board reconnaissance platform for further analysis. The off-board communication system is responsible for providing a stable and reliable connection between the on-board reconnaissance platform and the off-board reconnaissance platform, as well as a high bandwidth to send the data collected by the \gls{uav} in real-time. The main requirements for the off-board communication system are a high bandwidth, a secure connection, and the ability to receive data from multiple \glspl{uav} simultaneously.
+
+For this case, a \gls{4g} communication module was chosen, as it satisfies the requirements for the off-board communication system as well as providing a high bandwidth to send the data collected by the \gls{uav} in real-time. The \gls{4g} communication module chosen for the off-board communication system was the \todo{add ref to where we bought them} depicted in \todo{add figure}, as it provides a good balance between bandwidth, reliability, and price-performance ratio. A \gls{4g} communication module was chosen as the environment where the \gls{uav} will operate has a good \gls{4g} coverage. On the other hand, if the \gls{uav} will operate in remote areas with limited infrastructure, a \gls{rf} communication module would be more suitable.
+
+\todo{add figure of the communication module}

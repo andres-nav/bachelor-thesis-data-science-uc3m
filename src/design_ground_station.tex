@@ -1,0 +1,11 @@
+\section{Ground Station}\label{sec:ground_station}
+
+The ground station is the control station that monitors the \gls{uav} in real-time. It is responsible for receiving telemetry data from the \gls{uav} and sending commands to update its flight plan. The ground station is also responsible for creating a geofence around the area of operation, monitoring the \gls{uav}'s position and altitude in real-time, and tracking multiple \glspl{uav} simultaneously. The ground station is composed of the following components:
+
+For the ground station, two main components are required: the ground control station and the backup control station. The ground control station is the main control station that monitors the \gls{uav} in real-time, receives telemetry data from the \gls{uav}, has the waypoint planning software, and sends commands to update the \gls{uav}'s flight plan. The backup control station is the secondary control station that serves as a backup in case the main control station fails. The backup control station has limited functionality, with the ability to receive telemetry data from the \gls{uav} and a manual override to take control of the \gls{uav} in case of an emergency.
+
+The ground control station is composed of a computer, it can be a personal laptop or a desktop computer, with the waypoint planning software installed, in this case, the \todo{add software} software as it can be seen in \todo{ref}, and a communication modules to communicate with the \gls{uav} in real-time, which will be explained in \cref{sec:communication_system}. The backup control station is composed of a radio controller, which is a handheld device that allows the operator to take control of the \gls{uav} manually, and a communication module to receive telemetry data from the \gls{uav} in real-time. For the radio controller, the \todo{add ref to where we bought them} was chosen, see \todo{add figiure}, as it provides a good balance between range, reliability, and ease of use as well as a good price-performance ratio.
+
+\todo{figure of the ground control station with the software}
+
+\todo{figure of the backup control station with the radio controller}
