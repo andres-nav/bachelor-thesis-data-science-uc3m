@@ -1,10 +1,10 @@
-\section{Unmanned Aerial Vehicle}\label{sec:uav}
+\section{Unmanned Aerial Vehicle}\label{sec:design_uav}
 
-For the \gls{uav} design, the following components are considered: the airframe, the propulsion system, the flight controller, the power system, peripherals, and the payload.
+For the \gls{uav} design, the following components are considered: the airframe, the propulsion system, the flight controller, the power system, and peripherals.
 
 \subsection{Airframe}
 
-The airframe is the structure of the \gls{uav} that holds all the components together. The airframe must be lightweight, durable, and easy to assemble and disassemble. The airframe must also be able to carry the payload and sensors required for the reconnaissance tasks.
+The airframe is the structure of the \gls{uav} that holds all the components together. The airframe must be lightweight, durable, and easy to assemble and disassemble. The airframe must also be able to carry the peripherals and additional components required for the reconnaissance tasks.
 
 For the airframe, different designes are considered, such as fixed-wing, rotary-wing, and hybrid designs as stated in \cref{sec:uav_types}. As on of the main requirements is the ability to take off and land in remote areas with limited infrastructure, a rotary-wing design is chosen for the \gls{uav}. The rotary-wing design allows for vertical takeoff and landing, as well as the ability to hover in place, which is useful for reconnaissance tasks.
 
@@ -12,21 +12,19 @@ Rotary-wing designs are further divided into multirotor and single-rotor designs
 
 \todo{ add image of two types of airframes multirotor and single rotor}
 
-For the material of the airframe, a lightweight and durable material is chosen, such as carbon fiber or aluminum. The airframe is designed to be modular, allowing for the integration of different sensors and payloads for different applications. The airframe is also designed to be scalable, allowing for the integration of multiple \glspl{uav} working together in a coordinated manner. And finally, the airframe is designed to be cost-effective and commercially available, with the ability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
+For the material of the airframe, a lightweight and durable material is chosen, such as carbon fiber or aluminum. The airframe is designed to be modular, allowing for the integration of different sensors and payloads for different applications. And finally, the airframe is designed to be cost-effective and commercially available, with the ability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
 
 For that case the airframe chosen \todo{add ref to where we bought it} is the \todo{add which one}. It is a quadcopter design made of carbon fiber, with a wingspan of \todo{add size} and a maximum takeoff weight of \todo{add weight}. The airframe is designed to carry a maximum payload weight of \todo{add weight}, with the ability to adapt to different reconnaissance tasks. Moreover, it has a payload bay that allows for the integration of different sensors and payloads, such as cameras, lidar, and thermal imaging sensors.
 
 \todo{ add image of the aireframe chosen }
 
-\subsection{Propulsion System}
+\subsection{Propulsion System}\label{subsec:design_propulsion_system}
 
 The propulsion system is the system that provides the thrust required for the \gls{uav} to take off, land, and navigate. The propulsion system can be of different types, such as electric, gasoline, or hybrid. Electric propulsion systems are usually chosen for \glspl{uav} due to their efficiency, reliability, and low maintenance requirements. Gasoline propulsion systems are usually chosen for larger \glspl{uav} that require longer flight times and higher payloads. Hybrid propulsion systems are usually chosen for \glspl{uav} that require both efficiency and long flight times.
 
-For the \gls{uav} design, an electric propulsion system is chosen, as it provides a good balance between efficiency, reliability, and low maintenance requirements. The electric propulsion system consists of four brushless motors, four electronic speed controllers, and four propellers. The main requirments of the propulsion system are the ability to provide enough thrust for the \gls{uav} to take off, land, and navigate, as well as the ability to carry the maximum payload weight of \todo{add weight}.
+For the \gls{uav} design, an electric propulsion system is chosen, as it provides a good balance between efficiency, reliability, and low maintenance requirements. The electric propulsion system consists of four brushless motors, four electronic speed controllers, and four propellers. The main requirements of the propulsion system are the ability to provide enough thrust for the \gls{uav} to take off, land, and navigate, as well as the ability to carry the maximum payload weight of \todo{add weight}.
 
 The brushless motors chosen were the \todo{add ref to where we bought them}, with a maximum thrust of \todo{add thrust} and a maximum power of \todo{add power}. The electronic speed controllers chosen were the \todo{add ref to where we bought them}, with a maximum current of \todo{add current} and a maximum voltage of \todo{add voltage}. The propellers chosen were the \todo{add ref to where we bought them}, with a maximum diameter of \todo{add diameter} and a maximum pitch of \todo{add pitch}. This complete propulsion system is designed to provide a thrust-to-weight ratio of \todo{add ratio}, with the ability to carry the maximum payload weight of \todo{add weight} which meets the requirements of the \gls{uav} design.
-
-The system is designed to be modular, allowing for the integration of different propulsion systems for different applications. The system is also designed to be scalable, allowing for the integration of multiple \glspl{uav} working together in a coordinated manner. And finally, the system is designed to be cost-effective and commercially available, with the ability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
 
 \todo{ add image of the propulsion system chosen }
 
@@ -40,7 +38,7 @@ For the \gls{uav} design, an autonomous flight controller is chosen, as it provi
 
 \todo{ add image of the flight controller chosen }
 
-\subsection{Power System}
+\subsection{Power System}\label{subsec:design_power_system}
 
 The power system is the system that provides the power required for the \gls{uav} to operate. The power system can be of different types, such as batteries, fuel cells, or solar panels. For \glspl{uav}, usually batteries are chosen, as they provide a good balance between energy density, power density, and weight. The main requirements of the power system are the ability to provide enough power for the \gls{uav} to take off, land, and navigate, as well as the ability to carry the maximum payload weight of \todo{add weight}.
 
@@ -50,7 +48,7 @@ For the \gls{uav} design, a lithium polymer battery is chosen, as it provides a 
 
 Moreover, usually the power system is divided into two parts, the power distribution system for the propulsion system and the power management system for the electronics. The main reason for this distinction is that the propulsion system requires a high current and low voltage, while the electronics require a low current and high voltage. However, for the \gls{uav} design, the power system is integrated into a single system to reduce weight and complexity and specially the pricing of the system.
 
-Futhermore, in order to provide the required power for the different components of the \gls{uav}, a power management system is integrated into the power system. The power management system consists of a battery monitor, a voltage regulator, and a current sensor. The one chosen was the \todo{add ref to where we bought it}, with a maximum current of \todo{add current} and a maximum voltage of \todo{add voltage}. The power management system is designed to provide the required power for the different components of the \gls{uav}, as well as the ability to monitor the battery voltage and current in real-time.
+Futhermore, in order to provide the required power for the different components of the \gls{uav}, a power management system is integrated into the power system. The power management system consists of a battery monitor, a voltage regulator, and a current sensor. The one chosen was the \todo{add ref to where we bought it}, with a maximum current of \todo{add current} and a maximum voltage of \todo{add voltage}. The power management system is designed to provide the required power for the different components of the \gls{uav}, as well as the ability to monitor the battery voltage and current in real-time. And finally, a voltage regulator is integrated into the power system to provide the required voltage for the reconnaissance platform and the communication system. The voltage regulator chosen was the \todo{add ref to where we bought it}, with a maximum voltage of \todo{add voltage} and a maximum current of \todo{add current}. The voltage regulator is designed to provide the required voltage for the reconnaissance platform and the communication system, as well as the ability to monitor the voltage and current in real-time.
 
 \todo{ add image of the power management system chosen }
 
@@ -62,15 +60,14 @@ For the \gls{uav} design, a \gls{gps} module was integrated into the \gls{uav}, 
 
 \todo{ add image of the gps module chosen }
 
+Moreover, a kill switch was integrated into the \gls{uav}, as it provides the ability to stop the motors in case of an emergency. It is a required safety feature for \glspl{uav} to prevent accidents and injuries. The kill switch chosen was the \todo{add ref to where we bought it}.
 
-\subsection{Payload}
+\todo{ add image of the kill switch chosen }
 
-The payload is the system that carries the sensors and cameras required for the reconnaissance tasks. The payload can be of different types, such as cameras, lidar, thermal imaging sensors, or multispectral sensors. For the \gls{uav} design, a camera is chosen, as it provides the ability to collect images of the environment. The main requirements of the payload are the ability to carry the sensors and cameras required for the reconnaissance tasks, as well as the ability to relay the information to the ground station in real-time.
+Finally, a camera was integrated into the \gls{uav}, as it provides the ability to collect images of the environment. The camera chosen was the \todo{add ref to where we bought it}, with a maximum resolution of \todo{add resolution} and a maximum frame rate of \todo{add rate}. The camera is designed to provide the ability to collect images of the environment, as well as the ability to relay the information to the ground station in real-time. An image of the camera is shown in \todo{add ref to fig}.
 
-For the \gls{uav} design, a camera was integrated into the \gls{uav}, as it provides the ability to collect images of the environment. The camera chosen was the \todo{add ref to where we bought it}, with a maximum resolution of \todo{add resolution} and a maximum frame rate of \todo{add rate}. The camera is designed to provide the ability to collect images of the environment, as well as the ability to relay the information to the ground station in real-time. An image of the camera is shown in \todo{add ref to fig}.
+\todo{ add image of the camera chosen }
 
-\todo{ figure of the camera chosen }
-
-Finally, a on-board computer was integrated into the \gls{uav}, as it provides the ability to process the data collected by the sensors and cameras. The on-board computer chosen was the \todo{add ref to where we bought it}, with a maximum processing power of \todo{add power} and a maximum memory of \todo{add memory}. The on-board computer is designed to provide the ability to process the data collected by the sensors and cameras, as well as the ability to relay the information to the ground station in real-time. An image of the on-board computer is shown in \todo{add ref to fig}.
-
-\todo{ figure of the on-board computer chosen }
+% Local Variables:
+% jinx-local-words: "aireframe uav"
+% End:
