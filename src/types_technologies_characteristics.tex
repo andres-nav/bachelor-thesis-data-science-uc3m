@@ -1,99 +1,92 @@
-\chapter{Types, Technologies \& Characteristics}\label{ch:types_technologies_characteristics}
+\chapter{Types \& Characteristics}\label{ch:types_technologies_characteristics}
 
-types of ntns
-https://arxiv.org/pdf/2103.09156
+% types of ntns
+% https://arxiv.org/pdf/2103.09156
 
-nice graph to show the structure of ntn
-https://arxiv.org/pdf/1912.10226
+% nice graph to show the structure of ntn
+% https://arxiv.org/pdf/1912.10226
 
-\todo{write this chapter}
-https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9861699, add different types of ntn and the challenges
+% \todo{write this chapter}
+% https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9861699, add different types of ntn and the challenges
 
-https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8869712
-types of areal platformas, todo add image from it
+% https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8869712
+% types of areal platformas, todo add image from it
 
 
-\section{Types of Non-Terrestrial Networks}\label{sec:types_of_non_terrestrial_networks}
+\glspl{ntn} are an emerging approach in the field of wireless communication that aims to expand network coverage beyond the reach of traditional terrestrial systems. By utilizing platforms such as satellites, \glspl{uav}, and \glspl{hap}, \glspl{ntn} can address the growing demand for global connectivity, particularly in remote or inaccessible areas.\ \glspl{ntn} offer a flexible and adaptable infrastructure, supporting a wide range of applications from disaster recovery to rural broadband access.
 
-\glspl{ntn} present a versatile framework for deploying communication infrastructure, utilizing various platform roles tailored to address specific connectivity needs. This section delineates the principal architectural models of \glspl{ntn} and elucidates the roles they can play within communication networks. These deployment models shed light on the effective utilization of \glspl{ntn} in diverse scenarios, enhancing coverage, extending network reach, and supporting specialized applications.
+The following sections explore the various types of \glspl{ntn}, also referred as architectural models, highlighting their roles in enhancing communication networks, the benefits they offer, and the challenges they face. These architectures include platforms functioning as network users, relays, and base stations, along with mixed models that combine different approaches to maximize efficiency and coverage. The diagram of the different architectures of \gls{ntn} platforms according to their use case is shown in \cref{fig:ntn_platforms}.
 
-\todo{add figure and then reference to each type}
+\begin{figure}
+  \begin{subfigure}{0.4\textheight}
+    \includegraphics{ntn_use_case_platform_as_a_user.png}
+    \caption{Diagram of NTN Platforms as Network Users where the NTN acts as another UE in the network.}\label{fig:ntn_platform_as_a_user}
+  \end{subfigure}
 
-\subsection{NTN Platform as a User}\label{subsec:ntn_platform_as_a_user}
+  \begin{subfigure}{0.4\textheight}
+    \includegraphics{ntn_use_case_platform_as_a_relay.png}
+    \caption{Diagram of NTN Platforms as Relays where the NTN acts as a relay between the UE and the base station.}\label{fig:ntn_platform_as_a_relay}
+  \end{subfigure}
 
-In this configuration, the \gls{ntn} platform functions as a user, akin to a mobile device or \gls{ue} that connects to a terrestrial network. This setup is particularly relevant for platforms such as satellites and \glspl{uav} that necessitate connectivity for data transmission. These airborne systems can access existing ground-based communication networks through terrestrial base stations.
+  \begin{subfigure}{0.4\textheight}
+    \includegraphics{ntn_use_case_platform_as_a_base_station.png}
+    \caption{Diagram of NTN Platforms as Base Stations where the NTN acts as a base station for the UE.}\label{fig:ntn_platform_as_a_base_station}
+  \end{subfigure}
 
-A notable instance of this integration is the incorporation of UAVs into terrestrial networks. The \gls{3gpp} recognizes \gls{uav} as a distinct category of \gls{ue}, prompting ongoing research to tackle the unique connectivity challenges they pose. These challenges encompass maintaining a stable connection during \gls{uav} movement, mitigating potential interference, and ensuring quality of service at varying altitudes. By positioning \glspl{uav} as users within the network, terrestrial infrastructure can accommodate a broader spectrum of communication requirements, including applications in surveillance, remote sensing, and logistics.
+  \begin{subfigure}{0.4\textheight}
+    \includegraphics{ntn_use_case_platform_mixed.png}
+    \caption{Diagram of Mixed Architecture Models where the NTN acts as a combination of the above.}\label{fig:mixed_architecture_models}
+  \end{subfigure}
 
-Moreover, in scenarios where terrestrial ground stations are absent or impractical, satellites can directly communicate with other high-altitude satellites. This strategy obviates the necessity for extensive ground station networks, facilitating direct data transmission between satellites and back to Earth. Such configurations are particularly advantageous for space missions and remote observation, where direct satellite-to-satellite communication can enhance data transmission efficiency and reliability.
+  \caption{Different architectures of NTN platforms according to their use case \autocite{evolution_ntn_from_5g_6g_survey}.}\label{fig:ntn_platforms}
+\end{figure}
 
-\subsection{NTN Platform as a Relay}\label{subsec:ntn_platform_as_a_relay}
+\section{NTN Platforms as Network Users}\label{sec:ntn_platform_as_a_user}
 
-Another architectural model involves the \gls{ntn} platform serving as a relay, functioning as an intermediary that transfers communication signals among different network components. This model can be further divided into two primary configurations based on the location of the relay:
+In this architecture, the \gls{ntn} platform operates similarly to a user device, or \gls{ue}, connecting to an existing terrestrial network as depicted in \cref{fig:ntn_platform_as_a_user}. This model is particularly relevant for platforms like satellites and \glspl{uav}, which need connectivity for data transmission. \glspl{uav}, for instance, can access terrestrial networks via base stations located on the ground.
 
-\begin{itemize}
-  \item \Backhaul Connectivity (Connecting the Base Station to the Core Network): In this setup, the \gls{ntn} platform provides a backhaul link, connecting a ground-based base station to the core network infrastructure. This configuration is especially beneficial in remote regions where traditional backhaul solutions, such as fiber optic cables, are either unavailable or prohibitively expensive to install. Utilizing satellites or \glspl{hap} for backhaul connectivity allows the extension of terrestrial networks without necessitating large-scale ground infrastructure.
+A well-known example is the integration of \glspl{uav} into terrestrial networks. The \gls{3gpp} has identified \glspl{uav} as a unique category of \gls{ue} \autocite{muruganathan2019overview3gpprelease15study}, leading to research on how to address their specific connectivity challenges \autocite{uav_assisted_networks_challenges}. These challenges include maintaining stable connections during flight, managing potential interference, and ensuring service quality at various altitudes. By treating \glspl{uav} as network users, terrestrial infrastructure can support a broader range of communication needs, such as surveillance, logistics, and remote sensing.
 
-  \item Direct Access Relay (Linking Users to the Base Station): In this alternative configuration, the \gls{ntn} platform acts as a direct relay between ground users and the terrestrial base station. This approach proves advantageous in environments where access to a base station is impeded, such as densely populated urban areas or rugged mountainous terrains. In these scenarios, \glspl{uav} or \gls{leo} satellites can serve as intermediary nodes, relaying user communication signals to the ground network. This method effectively expands network coverage and improves connectivity in regions that are otherwise difficult to serve with conventional infrastructure.
-\end{itemize}
+Additionally, in scenarios where terrestrial ground stations are unavailable or impractical, satellites can communicate directly with other satellites. This capability eliminates the need for extensive ground infrastructure, improving data transmission efficiency and making it particularly beneficial for space missions and remote observation activities.
 
-\subsection{NTN Platform as a Base Station}\label{subsec:ntn_platform_as_a_base_station}
+\section{NTN Platforms as Relays}\label{sec:ntn_platform_as_a_relay}
 
-When equipped with advanced processing capabilities, the \gls{ntn} platform can assume the role of a base station. This architecture employs platforms with regenerative payloads capable of processing communication signals onboard, enabling the \gls{ntn} platform to function as a ``flying'' or ``orbiting'' base station. Such systems can manage connections and process data without reliance on terrestrial infrastructure.
+\gls{ntn} platforms can also serve as relays, functioning as intermediaries that transmit signals between different components of the network, refer to \cref{fig:ntn_platform_as_a_relay}. This type of architecture can be categorized into two main configurations based on the relay's role within the network.
 
-\begin{itemize}
-  \item Satellite-Based Base Stations: Satellites, especially those in \gls{leo}, can be outfitted with onboard processing units to execute tasks typically managed by ground-based base stations. These tasks may encompass signal processing, traffic routing, and user connection management. Satellite-based base stations are particularly well-suited for providing connectivity in remote locales, such as open seas, deserts, or disaster-stricken areas where terrestrial infrastructure is impractical.
+The first configuration involves backhaul connectivity \autocite{Elamassie2023FreeSO}, where the \gls{ntn} platform provides a link between a ground-based base station and the core network. This model is especially useful in remote or hard-to-reach areas where traditional backhaul solutions, such as fiber optic cables, are unavailable or too costly to install. By using satellites or \glspl{hap} as relays, terrestrial networks can be extended without requiring significant ground infrastructure.
 
-  \item \gls{uav}-Based Base Stations: In addition to satellites, \glspl{uav} can be deployed as temporary base stations, providing on-demand network coverage in specific regions. For example, \glspl{uav} equipped with \gls{5g} communication technology can deliver network services during large events, emergency situations, or military operations. Their ability to operate at relatively low altitudes makes them ideal for applications requiring localized coverage with minimal delay.
-\end{itemize}
+In the second configuration, the \gls{ntn} platform acts as a direct relay between ground users and a terrestrial base station. This setup is particularly effective in environments where access to a base station is limited, such as densely populated urban areas or mountainous regions.\ \glspl{uav} or \gls{leo} satellites can serve as intermediary nodes, relaying user signals to the terrestrial network. This approach expands coverage and improves connectivity in areas where traditional infrastructure may not suffice \autocite{overview_on-5g-and-beyon-networks-with-uav}.
 
-\subsection{Mixed Architecture Models}\label{subsec:mixed_architecture_models}
+\section{NTN Platforms as Base Stations}\label{sec:ntn_platform_as_a_base_station}
 
-In practical applications, hybrid configurations that amalgamate different architectural models are common, maximizing the strengths of each platform. Mixed architectures facilitate more flexible deployment strategies by leveraging a combination of platforms with varied roles and capabilities.
+\gls{ntn} platforms can also be configured to act as base stations, managing communication networks autonomously. Platforms equipped with advanced processing capabilities, such as regenerative payloads, can process signals onboard and provide connectivity without relying on ground-based infrastructure, as shown in \cref{fig:ntn_platform_as_a_base_station}. This architecture is particularly useful in scenarios where ground-based base stations are impractical or unavailable.
 
-\begin{itemize}
-  \item Satellite and \gls{uav} Combinations: In certain scenarios, a \gls{leo} satellite with base station capabilities may collaborate with \gls{uav} acting as relays to extend coverage to ground users. The \glspl{uav}, which operate at lower altitudes than the satellites, can enhance connectivity by relaying data to the satellite, which subsequently forwards the information to the core network.
+In the case of satellite-based base stations, satellites in \gls{leo} are equipped with onboard processors that handle tasks typically managed by terrestrial base stations, such as signal processing, traffic routing, and user management \autocite{leo_platforms_in_ntn}. This configuration is particularly well-suited for providing connectivity in remote regions, such as open seas, deserts, or disaster-stricken areas where ground infrastructure is impractical or unavailable.
 
-  \item Multi-Tier Satellite Configurations: Another instance of mixed architecture involves utilizing satellites at distinct altitudes to complement one another. For instance, a \gls{geo} satellite can furnish a high-level backhaul connection to the core network, while \gls{leo} satellites deliver last-mile connectivity to end users. This multi-tiered approach achieves a balance between low latency (provided by \gls{leo} satellites) and extensive coverage (facilitated by \gls{geo} satellites).
+\glspl{uav} can also function as temporary base stations, providing localized network coverage in specific areas. For example, \glspl{uav} equipped with \gls{5g} technology can deliver communication services during large-scale events, emergencies, or military operations. These \gls{uav}-based stations operate at lower altitudes than satellites, making them ideal for providing real-time, localized coverage with minimal delay.
 
-  \item \gls{hap} Assisted Networks: \glspl{hap}, operating approximately \SI{20}{\kilo\meter} above the Earth's surface, can play a supportive role by bridging the gap between \glspl{uav} and satellites. In this configuration, the \gls{hap} serves as an intermediate relay point, receiving data from \glspl{uav} below and transmitting it to \gls{leo} satellites above. This multi-hop communication strategy can significantly enhance data transmission efficiency, particularly in complex environments.
-\end{itemize}
+\section{Mixed Architecture Models}\label{sec:mixed_architecture_models}
 
-3.6 Advantages and Challenges of Different NTN Architectures
+In real-world deployments, combining different architectural models is often necessary to create a more flexible and robust network infrastructure \autocite{hybrid_satellite_terrestrial_networks}, as shown in \cref{fig:mixed_architecture_models}. Mixed architecture models leverage the unique strengths of various \gls{ntn} platforms to optimize communication performance and coverage.
 
-While NTNs present a range of benefits, they also come with specific challenges. Understanding the advantages and limitations of each architecture is crucial for selecting the appropriate model for a given use case.
-3.6.1 Advantages
+One example of a mixed architecture is a combination of \gls{leo} satellites and \glspl{uav}. In this configuration, a \gls{leo} satellite equipped with base station capabilities can work alongside \glspl{uav} acting as relays to extend coverage to ground users. The \glspl{uav}, operating at lower altitudes, enhance connectivity by relaying signals to the satellite, which then forwards the data to the core network. This approach ensures a broader coverage area and improved network performance.
 
-Extended Coverage: One of the primary benefits of NTNs is their ability to provide network coverage in areas that are otherwise unreachable with terrestrial infrastructure. This includes remote regions such as oceans, mountains, and deserts, as well as locations affected by natural disasters where ground networks may be damaged or unavailable.
+Another example involves multi-tier satellite configurations \autocite{5g_allstar}, where satellites at different altitudes work together to provide comprehensive coverage. For instance, a \gls{geo} satellite can serve as a high-level backhaul link to the core network, while \gls{leo} satellites deliver low-latency connectivity to end users. This multi-tier approach combines the strengths of \gls{geo} and \gls{leo} satellites, offering both extensive coverage and low-latency communication.
 
-Rapid Deployment: Platforms such as UAVs and high-altitude balloons can be deployed quickly in response to urgent situations. For example, during a natural disaster, UAVs can be used to reestablish communication networks to support rescue operations and coordinate emergency response efforts.
+Finally, \glspl{hap} can be integrated into \gls{ntn} networks to act as intermediary nodes between UAVs and satellites. In this configuration, \glspl{hap} receive data from \glspl{uav} below and transmit it to \gls{leo} satellites above, improving data transmission efficiency. This multi-hop communication strategy is particularly useful in complex environments where direct satellite or terrestrial communication is difficult.
 
-Flexible Infrastructure: By combining various NTN platforms, it is possible to create flexible network architectures that adapt to changing conditions and requirements. This flexibility allows for tailored connectivity solutions based on the specific needs of different regions and scenarios.
+\section{Characteristics of Non-Terrestrial Networks}\label{sec:characteristics_of_non_terrestrial_networks}
 
-Cost-Effective Solutions: Using NTNs for backhaul or direct relay can reduce the reliance on expensive ground infrastructure, especially in sparsely populated areas where traditional networks would not be economically viable.
+\glspl{ntn} offer several benefits, but they also present challenges. One of the primary advantages of \glspl{ntn} is their ability to extend network coverage to regions where terrestrial infrastructure is either unavailable or impractical \autocite{evolution_ntn_from_5g_6g_survey}.\ \glspl{ntn} can provide connectivity in remote areas, including oceans, mountainous regions, and locations affected by natural disasters. Platforms like \glspl{uav} and \glspl{hap} are especially useful in emergencies, as they can be quickly deployed to restore communication services and support disaster relief efforts.
 
-3.6.2 Challenges
+In addition, \glspl{ntn} provide a flexible communication infrastructure by integrating different types of platforms. This adaptability makes \glspl{ntn} suitable for meeting the needs of diverse applications across various regions. Moreover,\ \glspl{ntn} are often more cost-effective than traditional networks, especially in sparsely populated areas where building extensive ground infrastructure would be prohibitively expensive.
 
-Latency Concerns: Although LEO satellites offer lower latency compared to GEO satellites, the delay can still be noticeable for real-time applications. This issue is more pronounced in configurations involving multiple satellite hops or inter-satellite communications.
+However, \glspl{ntn} also face several challenges. Latency is a significant concern, especially in systems that rely on multiple satellite hops or satellite-to-satellite communication. High latency can affect the performance of real-time applications, such as voice or video communication. Signal interference is another issue, as multiple platforms operating at different altitudes and frequencies can lead to overlapping signals. Effective spectrum management is critical to maintaining service quality in \gls{ntn} deployments.
 
-Interference Management: Ensuring clear communication in NTNs can be challenging due to the risk of signal interference, especially when multiple platforms operate at different altitudes and frequencies. Proper spectrum management is necessary to avoid overlapping signals and maintain quality of service.
+Power limitations, particularly for \glspl{uav} and certain \glspl{hap}, can restrict their operational duration \autocite{power_efficiency_uav}. Additionally, regulatory challenges, such as airspace management and frequency allocation, pose obstacles to the widespread deployment of \glspl{ntn}. For instance, \gls{uav}-based \gls{ntn} platforms must comply with international airspace regulations, while satellite-based \glspl{ntn} require coordination across different countries to ensure proper frequency usage.
 
-Power Limitations: UAVs and certain high-altitude platforms have limited onboard power, which can restrict their operational duration and communication capabilities. Energy efficiency is a critical consideration for these platforms to maximize their effectiveness.
-
-Regulatory Challenges: Deploying NTNs, particularly those involving UAVs, often faces regulatory hurdles related to airspace usage, frequency allocation, and compliance with international agreements. Navigating these regulatory requirements can be complex and time-consuming.
-
-3.7 Use Cases for Non-Terrestrial Network Architectures
-
-NTN architectures support a wide variety of applications, providing valuable solutions across different sectors.
-
-Disaster Relief and Emergency Communications: In the aftermath of natural disasters, NTNs can be quickly deployed to restore connectivity for emergency services. UAVs and high-altitude platforms can serve as temporary mobile networks, facilitating communication between rescue teams and enabling coordination of relief efforts.
-
-Environmental Monitoring and Remote Sensing: NTNs are well-suited for environmental monitoring activities, such as tracking forest fires, monitoring wildlife, and studying the effects of climate change. The extensive coverage offered by satellites and high-altitude platforms allows for continuous observation of vast, remote areas.
-
-Maritime and Aviation Connectivity: For ships and aircraft operating in regions without terrestrial network coverage, NTNs can provide essential communication services. LEO satellite constellations, in particular, can offer broadband internet access for passengers on airplanes or crews on ships.
-
-Bridging the Digital Divide in Rural Areas: NTNs can extend internet access to underserved communities, helping to bridge the digital divide. By combining satellites, high-altitude platforms, and UAVs, network operators can deliver broadband services to remote regions where it would be too costly or impractical to build conventional infrastructure.
+\glspl{ntn} serve a variety of use cases across different sectors. In disaster recovery scenarios, \glspl{ntn} can be rapidly deployed to restore communication networks for emergency response teams \autocite{ntn_challenges_and_opportunities}.\ \glspl{ntn} are also valuable for environmental monitoring and remote sensing, providing continuous observation over large areas, such as forests, oceans, and agricultural lands. In the aviation and maritime sectors, \glspl{ntn} provide reliable connectivity for aircraft and ships, offering essential communication services in regions beyond terrestrial coverage. Finally, \glspl{ntn} play a crucial role in reducing the digital divide by delivering broadband internet access to rural and remote communities where traditional networks are not viable.
 
 % Local Variables:
-% jinx-local-words: "ntn uav"
+% jinx-local-words: "ntn uav ue"
 % End:
