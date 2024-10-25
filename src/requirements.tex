@@ -1,6 +1,6 @@
 \chapter{Requirements}\label{ch:requirements}
 
-Based on careful analysis of the conclusions from the current trends in \glspl{uav} outlined in \cref{ch:modern_trends} and the objectives reviewed in \cref{ch:objectives}, the following requirements are established for the high-level system as well as the detailed requirements for the \gls{uav}, control station, and reconnaissance platform.
+Based on a careful analysis of the conclusions from the modern trends in \glspl{uav} outlined in \cref{ch:modern_trends} and the objectives reviewed in \cref{ch:objectives}, the following requirements are established for the high-level system as well as the detailed requirements for each of the components of the system: the \gls{uav}, the control station, and the reconnaissance platform.
 
 \section{High-level System Requirements}
 
@@ -9,68 +9,61 @@ The high-level system requirements are as follows:
 \begin{itemize}
   \item The system must be able to operate in remote areas with limited infrastructure, such as roads, electricity, and internet connectivity.
 
-  \item The system must be able to be monitored remotely, with the ability to communicate with a ground station via a \gls{4g} or \gls{3g} connection.
+  \item The system must be able to be monitored remotely, with the ability to communicate with a ground station in real-time and for long distances, more than \SI{5}{\kilo\meter}.
 
-  \item The system must be cost-effective, with the ability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
+  \item The system must be cost-effective, with the capability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
 
-  \item The system must be modular, allowing for the integration of different sensors and payloads for different applications, as well as, the scalability of the system to include multiple \glspl{uav} working together in a coordinated manner.
+  \item The system must be modular, allowing for the integration of different sensors and payloads for different applications, such as mapping, surveillance, and monitoring the environment.
 
-  \item The system must be able to perform reconnaissance tasks autonomously, with the ability to take off, land, and navigate given a set of waypoints.
+  \item The system must be able to perform reconnaissance tasks autonomously, with the ability to take off, land, and navigate given a set of waypoints. Moreover, the system must be able to update its flight plan in real-time.
+
+  \item The system must integrate a real use-case scenario to proof the concept of the system, with the ability to detect and track objects, monitor the environment, and generate alerts and notifications in case of critical events or failures.
 
   \item The system must comply with the applicable regulatory framework for \glspl{uav} in the country of operation, Spain, as well as the \gls{eu} regulations. See \cref{ch:regulatory_framework} for more information.
 \end{itemize}
 
+Given the high-level system requirements, the detailed requirements for each of the components of the system are outlined in the following sections.
+
 \section{Unmanned Aerial Vehicle Requirements}
 
-The \gls{uav} requirements are as follows:
+For the \gls{uav}, the specifications necessary to meet the high-level system requirements are:
 
 \begin{itemize}
-  \item The \gls{uav} must be able to be controlled remotely, with the ability to communicate with a ground station in real-time.
+  \item The \gls{uav} must be able to be controlled remotely, with the ability to communicate with a ground station in real-time and for long distances, more than \SI{5}{\kilo\meter} and function autonomously.
 
-  \item The \gls{uav} must be able to take off, land, and navigate autonomously, with the ability to update its flight plan in real-time.
+  \item The \gls{uav} must be able to carry different payloads and sensors for different applications up to a maximum payload weight of \SI{2}{\kilogram}, with the ability to adapt to different reconnaissance tasks.
 
-  \item The \gls{uav} must be able to process data in real-time, with the ability to relay the information to the ground station.
+  \item The \gls{uav} must be able to fly for a minimum of \SI{30}{\minute}, without the need for recharging.
 
-  \item The \gls{uav} must be able to carry different payloads and sensors for different applications up to a maximum payload weight of 2 kg, with the ability to adapt to different reconnaissance tasks.
+  \item The \gls{uav} must be have a failsafe mechanism, that is it must be able to return to the control station in case of loss of communication or other critical failures.
 
-  \item The \gls{uav} must be able to fly for a minimum of 30 minutes, without the need for recharging.
+  \item The \gls{uav} must be able to process data in real-time, with the ability to relay the information to the control station and the reconnaissance platform.
 
-  \item The \gls{uav} must be have a failsafe mechanism, that is it must be able to return to the ground station in case of loss of communication or other critical failures.
-
-  \item The \gls{uav} must be able to keep a fixed altitude and position.
-
-  \item The \gls{uav} must comply with the EASA regulations for the Open Category, with a maximum limit set at 25 kg of MTOW and 3 meters of wingspan.
-
-  \item The \gls{uav} must be able to perform reconnaissance tasks, such as mapping, surveillance, and monitoring the environment.
+  \item The \gls{uav} must comply with the EASA regulations for the Open Category, with a maximum limit set at \SI{25}{\kilogram} of MTOW and \SI{3}{\meter} of wingspan.
 \end{itemize}
 
 \section{Control Station Requirements}
 
-The control station requirements are as follows:
-
+In order to provide an autonomous and reliable control of the \gls{uav}, the control station requirements are as follows:
 
 \begin{itemize}
   \item The control station must be able to receive telemetry data from the \gls{uav} in real-time, with the ability to send commands to the \gls{uav} to update its flight plan.
 
-  \item The control station must be able to be used remotely, with the ability to communicate with the \gls{uav} via a \gls{4g} or \gls{3g} connection.
+  \item The control station must be able to be used remotely, with the ability to communicate with the \gls{uav} over long distances, more than \SI{5}{\kilo\meter}, and for extended periods of time.
 
-  \item The control station must be able to create a geofence around the area of operation, with the ability to monitor the \gls{uav}'s position and altitude in real-time.
-
-  \item The control station must have the capability be able to track multiple \glspl{uav} simultaneously, with the ability to coordinate their flight plans and tasks.
+  \item The control station must be able to create a geofence around the area of operation, with the ability to monitor the \gls{uav}'s position and altitude in real-time and receive alerts and notifications in case of critical events or failures.
 
   \item The control station must log all telemetry data and flight information, with the ability to analyze the data and generate reports.
+
+  \item The system used for the control station must be reliable, secure, and easy to use, with the addition of a backup control station in case of failure.
 \end{itemize}
 
 \section{Reconnaissance Platform Requirements}
 
-The reconnaissance platform requirements are as follows:
+Finally, to provide a use-case scenario for the system, the reconnaissance platform requirements are as follows:
 
 \begin{itemize}
-  \item The reconnaissance platform must be able to run on a variety of operating systems, with the ability to communicate with the \glspl{uav} and the control station in real-time.
-
-  \item The reconnaissance platform must be able to be used remotely, with the ability to access the \glspl{uav} and the control station via a \gls{4g} or \gls{3g} connection.
-
-  \item The reconnaissance platform must be reliable, secure, and easy to use, allowing for the programming of the \glspl{uav} to perform specific tasks and the coordination of multiple \glspl{uav} in a swarm.
+  \item The reconnaissance platform must be able to run on a variety of operating systems, with the ability to communicate with the \glspl{uav} and the control station in real-time and over long distances.
 
   \item The reconnaissance platform must be customizable, allowing for the integration of new features and the modification of existing ones, as well as, the addition of new \glspl{uav} to the system and different types of reconnaissance tasks.
 
