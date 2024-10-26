@@ -1,0 +1,9 @@
+\section{Control Station}\label{sec:design_control_station}
+
+The control station is the station that monitors the \gls{uav} in real-time. It is responsible for receiving telemetry data from the \gls{uav} and sending commands to update its flight plan. The control station is also responsible for creating a geofence around the area of operation, monitoring the \gls{uav}'s position and altitude in real-time, and tracking multiple \glspl{uav} simultaneously. To perform the tasks mentioned, the control station is composed of a ground control station running a waypoint planning software and a radio controller with a communication module to communicate with the \gls{uav} in real-time.
+
+The ground control station is the human-machine interface that allows the operator to monitor the \gls{uav} in real-time, receive telemetry data from the \gls{uav}, and send commands to update its flight plan. For the ground control station, a personal laptop or a desktop computer is used with the waypoint planning software installed, in this case, the Mission Planner software \autocite{ardupilotMissionPlanner}. For the radio controller, a handheld device is used that allows the operator to take control of the \gls{uav} manually in case of an emergency and a communication module to receive telemetry data from the \gls{uav} in real-time. The radio controller used is the RadioMaster TX16S MKII Hall V4.0 \autocite{rcinnovationsRadioMasterTX16S}. For the communication module, the module used is described in \cref{sec:design_communication_system}.
+
+% Local Variables:
+% jinx-local-words: "ardupilotMissionPlanner uav"
+% End:

@@ -1,6 +1,6 @@
 \chapter{Requirements}\label{ch:requirements}
 
-Based on a careful analysis of the conclusions from the modern trends in \glspl{uav} outlined in \cref{ch:modern_trends} and the objectives reviewed in \cref{ch:objectives}, the following requirements are established for the high-level system as well as the detailed requirements for each of the components of the system: the \gls{uav}, the control station, and the reconnaissance platform.
+Based on a careful analysis of the conclusions from the modern trends in \glspl{uav} outlined in \cref{ch:modern_trends} and the objectives reviewed in \cref{ch:objectives}, the following requirements are established for the high-level system as well as the detailed requirements for each of the components of the system: the \gls{uav}, the drone that will be used for the reconnaissance tasks, the control station, the system that will monitor the \gls{uav} in real-time and communicate with it, and the reconnaissance platform, the system that will process the data collected by the \gls{uav} and provide insights to the end-user for the different reconnaissance tasks.
 
 \section{High-level System Requirements}
 
@@ -9,7 +9,7 @@ The high-level system requirements are as follows:
 \begin{itemize}
   \item The system must be able to operate in remote areas with limited infrastructure, such as roads, electricity, and internet connectivity.
 
-  \item The system must be able to be monitored remotely, with the ability to communicate with a ground station in real-time and for long distances, more than \SI{5}{\kilo\meter}.
+  \item The system must be able to be monitored remotely, with the ability to have a communication channel in real-time for long distances, more than \SI{5}{\kilo\meter}, for the full duration of the mission.
 
   \item The system must be cost-effective, with the capability to be assembled and disassembled easily, and to be repaired and maintained with minimal effort.
 
@@ -29,13 +29,13 @@ Given the high-level system requirements, the detailed requirements for each of 
 For the \gls{uav}, the specifications necessary to meet the high-level system requirements are:
 
 \begin{itemize}
-  \item The \gls{uav} must be able to be controlled remotely, with the ability to communicate with a ground station in real-time and for long distances, more than \SI{5}{\kilo\meter} and function autonomously.
+  \item The \gls{uav} must be able to be controlled remotely, with the ability to take off, land, and navigate autonomously given a set of waypoints.
 
   \item The \gls{uav} must be able to carry different payloads and sensors for different applications up to a maximum payload weight of \SI{2}{\kilogram}, with the ability to adapt to different reconnaissance tasks.
 
   \item The \gls{uav} must be able to fly for a minimum of \SI{30}{\minute}, without the need for recharging.
 
-  \item The \gls{uav} must be have a failsafe mechanism, that is it must be able to return to the control station in case of loss of communication or other critical failures.
+  \item The \gls{uav} must be have a failsafe mechanism, that is it must be able to return to the original point of departure in case of loss of communication or other critical failures.
 
   \item The \gls{uav} must be able to process data in real-time, with the ability to relay the information to the control station and the reconnaissance platform.
 
