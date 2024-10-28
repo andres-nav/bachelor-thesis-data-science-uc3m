@@ -26,6 +26,7 @@ For the airframe, the \gls{uav} was built using following the instructions provi
 Regarding the propulsion system, the four motors were attached to the airframe using custom metal brackets, as seen in \cref{fig:motors_attached_to_airframe}. The \glspl{esc} were attached to the airframe using double-sided tape and zip ties, as seen in \cref{fig:esc_attached_to_airframe}.
 
 \begin{figure}
+  \hfill
   \begin{subfigure}{0.4\textwidth}
     \includegraphics{motor_mount.jpg}
     \caption{Metal motor mount brackets to attach the motors to the airframe \autocite{developingcosteffectivedrones5g}.}\label{fig:motors_attached_to_airframe}
@@ -35,6 +36,7 @@ Regarding the propulsion system, the four motors were attached to the airframe u
     \includegraphics{bottom_plate_esc.png}
     \caption{Bottom view of the airframe with the \glspl{esc} attached \autocite{developingcosteffectivedrones5g}.}\label{fig:esc_attached_to_airframe}
   \end{subfigure}
+  \hfill
 
   \caption{Propulsion system components attached to the airframe.}\label{fig:propulsion_system_components_attached_to_airframe}
 \end{figure}
@@ -50,9 +52,10 @@ For the flight controller, it was placed in the middle of the airframe using dou
 
 \subsection{Power System}\label{subsec:implementation_power_system}
 
-The power system is the heaviest subsystem of the \gls{uav} and must be placed in the center of the airframe to provide the best balance and stability during flight. The battery was attached to the airframe using battery straps, as seen in \cref{fig:battery_attached_to_airframe}. The \gls{pdb}, \cref{fig:pdb}, was attached to the airframe using a custom 3D printed mount and places in the middle of the airframe, as seen in \cref{fig:power_distribution_board_attached_to_airframe}.
+The power system is the heaviest subsystem of the \gls{uav} and must be placed in the center of the airframe to provide the best balance and stability during flight. The battery was attached to the airframe using battery straps, as seen in \cref{fig:battery_attached_to_airframe}. The \gls{pdb}, \cref{fig:pdb}, was attached to the airframe using a custom 3D printed mount and places in the middle of the airframe, as seen in \cref{fig:power_distribution_board_attached_to_airframe}. Also, the voltage regulator was attached to the top of the airframe using double-sided tape and zip ties, refer to \cref{fig:computer_attached_to_airframe}.
 
 \begin{figure}
+  \hfill
   \begin{subfigure}[t]{0.3\linewidth}
     \includegraphics[width=\linewidth]{bottom_plate_battery.jpg}
     \caption{Battery attached to the airframe.}\label{fig:battery_attached_to_airframe}
@@ -67,6 +70,7 @@ The power system is the heaviest subsystem of the \gls{uav} and must be placed i
     \includegraphics[width=\linewidth]{mid_plate_pdb_mounted.jpg}
     \caption{\gls{pdb} attached to the airframe, orange box in the middle of the airframe.}\label{fig:power_distribution_board_attached_to_airframe}
   \end{subfigure}
+  \hfill
 
   \caption{Power system components attached to the airframe.}\label{fig:power_system_components_attached_to_airframe}
 \end{figure}
@@ -75,16 +79,53 @@ The power system is the heaviest subsystem of the \gls{uav} and must be placed i
 
 The \gls{gps} was attached to the top of the airframe using a custom 3D printed mount, as seen in \cref{fig:gps_attached_to_airframe}. A important note is that the \gls{gps} module must be placed in a location where it has the best reception, as well as where it is not obstructed by other components of the \gls{uav}. It must be place as far as possible from the motors and any carbon fiber components, as they can interfere with the reception of the \gls{gps} module.
 
+For the communication system, the \gls{rf} module was attached to the airframe using the same 3D printed mount as the \gls{gps} module, as seen in \cref{fig:gps_attached_to_airframe}. The \gls{4g} module was attached to the airframe along with the \gls{rf} module and the \gls{gps} module.
+
+The camera was attached to the front of the airframe using a custom 3D printed mount in order to provide the best \gls{fov}, as seen in \cref{fig:camera_attached_to_airframe}. The camera must be placed in a location where it has the best field of view, as well as where it is not obstructed by other components of the \gls{uav}. It must be placed as far as possible from the motors as they can interfere with the camera's \gls{fov}.
+
+Finally, for the on-board computer, it was placed in the middle of the airframe using screws and nuts, as seen in \cref{fig:computer_attached_to_airframe}. It must be placed in a location where air can flow freely to avoid overheating. Depending on the application, the on-board computer can be placed in a different location, as long as it is not obstructed by other components of the \gls{uav}, however, it is recommended to place it in the middle of the airframe to provide the best balance and stability during flight.
 
 \begin{figure}
-  \includegraphics[height=0.3\textheight]{top_plate_gps.jpg}
-  \caption{\gls{gps} module attached to the airframe.}\label{fig:gps_attached_to_airframe}
+  \hfill
+  \begin{subfigure}[t]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{top_plate_gps.jpg}
+    \caption{\gls{gps} module attached to the airframe.}\label{fig:gps_attached_to_airframe}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{front_mount_camera.jpg}
+    \caption{Camera attached to the airframe.}\label{fig:camera_attached_to_airframe}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.3\linewidth}
+    \includegraphics[width=\linewidth]{top_mount_computer.jpg}
+    \caption{On-board computer and voltage regulator attached to the airframe.}\label{fig:computer_attached_to_airframe}
+  \end{subfigure}
+  \hfill
+
+  \caption{Peripherals attached to the airframe.}\label{fig:peripherals_attached_to_airframe}
 \end{figure}
 
-For the communication system, the \gls{rf} module was attached to the airframe using the same 3D printed mount as the \gls{gps} module, as seen in \cref{fig:gps_module_attached_to_airframe}. The \gls{4g} module was attached to the airframe along with the \gls{rf} module and the \gls{gps} module.
+\subsection{Final Assembly}\label{subsec:implementation_final_assembly}
 
-\subsection{Integration}\label{subsec:implementation_integration}
+After all the components were attached to the airframe, the final assembly of the \gls{uav} was performed. The final assembly consists of connecting all the components together, as well as configuring the flight controller and the communication system. The final assembly of the \gls{uav} can be seen in \cref{fig:uav_assembled}.
+
+\begin{figure}
+  \hfill
+  \begin{subfigure}[t]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{final_assembly_top.jpg}
+    \caption{Top view of the \gls{uav} assembled.}\label{fig:uav_assembled_top}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[t]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{final_assembly_bottom.jpg}
+    \caption{Bottom view of the \gls{uav} assembled.}\label{fig:uav_assembled_bottom}
+  \end{subfigure}
+  \hfill
+
+  \caption{Final assembly of the \gls{uav}.}\label{fig:uav_assembled}
+\end{figure}
 
 % Local Variables:
-% jinx-local-words: "pdb uav"
+% jinx-local-words: "fov pdb uav"
 % End:
