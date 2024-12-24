@@ -6,52 +6,116 @@ Finally, to implement the reconnaissance platform, three main components are nee
 
 In order to capture the video from the Ricoh Theta X 360 Degree Camera \autocite{ricohimagingTHETARicoh}, the camera is connected to the NVIDIA Jetson Orin \autocite{nvidiaNVIDIAJetson} using a \gls{usb} C cable. The camera is configured to stream the video feed to the NVIDIA Jetson Orin using the Ricoh Theta X 360 Degree Camera API \autocite{ricoh360ReferenceRicoh}. In order to be able to capture the video feed from the camera, several libraries are used, such as OpenCV \autocite{githubGitHubOpencvopencv}, GSTThetaUVC \autocite{githubGitHubBuburidergstthetauvc}, LibUVC \autocite{githubGitHub6GIntegration3UC3Mlibuvcthetasample}, and V4L2 \autocite{githubGitHubUmlaeutev4l2loopback}. It is worth mentioning that the libraries used had to be modified to work with the Ricoh Theta X 360 Degree Camera, as it is not officially supported by the libraries. The video feed is captured in real-time and sent to the video processing component for further processing.
 
-\todo{add some examples}
-
 \subsection{Video Processing}\label{subsec:implementation_video_processing}
 
-Once the video feed is captured by the Jetson Orin, it is further processed to extract relevant information. The video processing is done using deep learning algorithms to detect and track objects in the environment. The model used for the object detection and tracking is the YOLOv11 \autocite{ultralyticsYOLO11} as it is the defacto standard for object detection and tracking in real-time. It provides the best performance in terms of accuracy and speed, as well as being able to run on the Jetson Orin. The model used was the YOLOv11-medium with a pixel resolution of 640x640 px and an inference time of \SI{56}{\milli\second}. \todo{add script used to run everything}
+Once the video feed is captured by the Jetson Orin, it is further processed to extract relevant information. The video processing is done using deep learning algorithms to detect and track objects in the environment. The model used for the object detection and tracking is the YOLOv11 \autocite{ultralyticsYOLO11} as it is the defacto standard for object detection and tracking in real-time. It provides the best performance in terms of accuracy and speed, as well as being able to run on the Jetson Orin. The model used was the YOLOv11-medium with a pixel resolution of 640x640 px and an inference time of \SI{56}{\milli\second}. In \cref{fig:drone_yolo_detection}, an example of the video feed captured by the camera can be seen, note a single frame is showcased.
 
-\todo{add some examples}
+\begin{figure}
+	\includegraphics[]{drone_yolo_detection.jpg}
+	\caption{Detection example of the video processing with a YOLOv11. The green box  on the middle right side of the image corresponds to the bounding box of the car.}\label{fig:drone_yolo_detection}
+\end{figure}
 
 \subsection{Insights Generation}\label{subsec:implementation_insights_generation}
 
-Finally, all the detected and tracked objects are sent to the insights generation component to generate insights for the end-user. In order to process the detected and tracked objects, a web application was developed using the NextJS framework \autocite{nextjsNextjsVercel} for the backend, ReactJS \autocite{reactReact} for the frontend, Tailwind CSS \autocite{tailwindcssTailwindRapidly} for the styling, and Prisma \autocite{prismaPrismaSimplify} for the database hanldling. This web application is responsible for displaying the detected and tracked objects in real-time, as well as generating alerts and notifications in case of critical events or failures. The web application is also responsible for managing the different missions of the \glspl{uav} with the objectives and constraints defined by the end-user and also handling the user authentication and authorization.
+Finally, all the detected and tracked objects are sent to the insights generation component to generate insights for the end-user. In order to process the detected and tracked objects, a web application was developed using the NextJS framework \autocite{nextjsNextjsVercel}. This web application is responsible for displaying the detected and tracked objects in real-time, as well as generating alerts and notifications in case of critical events or failures. The web application is also responsible for managing the different missions of the \glspl{uav} with the objectives and constraints defined by the end-user and also handling the user authentication and authorization.
 
-The web application is divided into three main layers: the application layer, the presentation layer, and the data layer. The application layer is responsible for handling the business logic of the web application, such as the user authentication and authorization, the mission management, the rule management, the detection management, the alert management, and the notification management. The presentation layer is responsible for displaying the information to the end-user. The data layer is responsible for storing the information of the web application.
-
-\subsubsection{Data Layer}\label{subsubsec:implementation_data_layer}
-The data layers are divided into two main components: the object storage and the database. The object storage is used to store the video feed captured by the camera, as well as the detected and tracked objects. The object storage used was Amazon S3 \autocite{amazonCloudComputing}, as it provides a reliable and scalable storage solution for the web application.  For the database, a relational database was used to store the information of the web application. As Prisma \autocite{prismaPrismaSimplify} was used for the database handling, the database chosen can be any database supported by Prisma, such as PostgreSQL, MySQL, SQLite. This was chosen to provide flexibility and scalability to the system, as well as to be able to easily switch between databases if needed for different use cases such as testing, development, or production. The schema of the database can be seen in \cref{fig:database_schema}. The schema has six main tables, each one responsible for storing different information:
-
-\begin{itemize}
-  \item User: stores the information of the users of the system that can access the web application. It is used for user authentication and authorization purposes.
-
-  \item Drone: stores the information of the drones that are connected to the system. It is used to manage the different drones and their missions. Each drone has a unique identifier, and a specific secret token to authenticate with the system and allow the drone to send the data to the system.
-
-  \item Mission: stores the information of the missions of the drones. It is used to manage the different missions of the drones and group drones together for specific tasks. Each mission can be composed of one or more drones, and each drone can be part of one or more missions. Moreover, users are assigned to missions to have access to the data collected by the drones.
-
-  \item Rule: stores the information of the rules of a specific mission to generate alerts and notifications. It is used to define the objectives and constraints of a mission, such as the specific objects to detect and track, the specific alerts to generate, and the specific notifications to send.
-
-  \item Detection: stores the information of the detected objects in the environment by a drone for a specific mission. It is used to store the detected objects and their properties, such as the class, the confidence, the position, the size, and the orientation.
-
-  \item Alert: stores the information of the alerts generated by the system for a specific mission created by a rule. It is used to store the alerts and their properties, such as the type, the severity, the message, the timestamp, and the status.
-\end{itemize}
-
-\begin{figure}
-  \includegraphics{reconnaissance_platform_database_schema.png}
-  \caption{Database schema of the reconnaissance platform.}\label{fig:database_schema}
-\end{figure}
+The web application is divided into three main layers: the presentation layer, the application layer, and the data layer. The application layer is responsible for handling the business logic of the web application, such as the user authentication and authorization, the mission management, the rule management, the detection management, the alert management, and the notification management. The presentation layer is responsible for displaying the information to the end-user. The data layer is responsible for storing the information of the web application.
 
 \subsubsection{Presentation Layer}\label{subsubsec:implementation_presentation_layer}
 
-The presentation layer is developed using the ReactJS framework \autocite{reactReact} for the frontend, Tailwind CSS \autocite{tailwindcssTailwindRapidly} for the styling, and Prisma \autocite{prismaPrismaSimplify} for the database handling. In order to provide a responsive and user-friendly interface, the web application is divided into different components, such as the login component, the dashboard component, the mission component, the drone component. Each component is responsible for displaying the information to the end-user and providing the necessary functionalities to interact with the system. The web application is designed to be easy to use and intuitive, as well as to provide real-time updates and notifications to the end-user. In \cref{fig:web_application}, a screenshot of the web application can be seen showcasing the dashboard component.
+The presentation layer is developed using the ReactJS framework \autocite{reactReact} for the frontend, Tailwind CSS \autocite{tailwindcssTailwindRapidly} for the styling, and Prisma \autocite{prismaPrismaSimplify} for the database handling. In order to provide a responsive and user-friendly interface, the web application is divided into different components, such as the login component, the dashboard component, the mission component, the drone component. Each component is responsible for displaying the information to the end-user and providing the necessary functionalities to interact with the system. The web application is designed to be easy to use and intuitive, as well as to provide real-time updates and notifications to the end-user. In \cref{fig:web_application}, a screenshot of the web application can be seen.
 
-\todo{add screenshot of the web application}
+\begin{figure}
+	\includegraphics[]{website_showcase.png}
+	\caption{Screenshot of the web application showcasing the dashboard.}\label{fig:web_application}
+\end{figure}
 
+\subsubsection{Data Layer}\label{subsubsec:implementation_data_layer}
 
+The data layers are divided into two main components: the object storage and the database. The object storage is used to store the video feed captured by the camera, as well as the detected and tracked objects. The object storage used was Amazon S3 \autocite{amazonCloudComputing}, as it provides a reliable and scalable storage solution for the web application.  For the database, a relational database was used to store the information of the web application. As Prisma \autocite{prismaPrismaSimplify} was used for the database handling, the database chosen can be any database supported by Prisma, such as PostgreSQL, MySQL, SQLite. This was chosen to provide flexibility and scalability to the system, as well as to be able to easily switch between databases if needed for different use cases such as testing, development, or production. The schema of the database can be seen in \cref{fig:database_schema}. The schema has six main tables, each one responsible for storing different information:
+
+\begin{itemize}
+	\item User: stores the information of the users of the system that can access the web application. It is used for user authentication and authorization purposes.
+
+	\item Drone: stores the information of the drones that are connected to the system. It is used to manage the different drones and their missions. Each drone has a unique identifier, and a specific secret token to authenticate with the system and allow the drone to send the data to the system.
+
+	\item Mission: stores the information of the missions of the drones. It is used to manage the different missions of the drones and group drones together for specific tasks. Each mission can be composed of one or more drones, and each drone can be part of one or more missions. Moreover, users are assigned to missions to have access to the data collected by the drones.
+
+	\item Rule: stores the information of the rules of a specific mission to generate alerts and notifications. It is used to define the objectives and constraints of a mission, such as the specific objects to detect and track, the specific alerts to generate, and the specific notifications to send.
+
+	\item Detection: stores the information of the detected objects in the environment by a drone for a specific mission. It is used to store the detected objects and their properties, such as the class, the confidence, the position, the size, and the orientation.
+
+	\item Alert: stores the information of the alerts generated by the system for a specific mission created by a rule. It is used to store the alerts and their properties, such as the type, the severity, the message, the timestamp, and the status.
+\end{itemize}
+
+\begin{figure}
+	\includegraphics{reconnaissance_platform_database_schema.png}
+	\caption{Database schema of the reconnaissance platform.}\label{fig:database_schema}
+\end{figure}
 
 \subsubsection{Application Layer}\label{subsubsec:implementation_application_layer}
 
-% Local Variables:
-% jinx-local-words: "defacto githubGitHubBuburidergstthetauvc githubGitHubOpencvopencv nvidiaNVIDIAJetson ricohimagingTHETARicoh uav"
-% End:
+The application layer forms the core of the web application, handling crucial business logic and system functionalities. This layer is responsible for managing various aspects of the reconnaissance platform, including:
+
+\begin{itemize}
+	\item User Authentication and Authorization: Implements secure login mechanisms and controls access to different parts of the system based on user roles and permissions. It is done with email password authentication and verification using the NextAuth.js library \autocite{nextauthNextAuthjsAuthentication}.
+
+	\item Mission Management: Oversees the creation, modification, and execution of drone missions. This includes defining mission parameters, assigning drones, and monitoring mission progress.
+
+	\item Rule Management: Allows users to set up and modify rules for generating alerts and notifications based on specific conditions or events detected during missions.
+
+	\item Detection Management: Processes and organizes the data from detected and tracked objects, making it available for analysis and visualization.
+
+	\item Alert Management: Generates and manages alerts based on predefined rules, ensuring that critical events are promptly communicated to relevant users.
+
+	\item Notification Management: Handles the distribution of notifications to users through various channels, keeping them informed about mission status, alerts, and system updates.
+\end{itemize}
+
+The application layer serves as the intermediary between the presentation layer and the data layer, ensuring efficient data flow and processing. It implements the business logic that interprets user actions from the presentation layer, interacts with the data layer to retrieve or store information, and prepares the data for display in the user interface.
+
+\subsubsection{LLM Integration}\label{subsubsec:implementation_llm_integration}
+
+Moreover, the detected and tracked objects are further processed through an \gls{llm} integration, in this case Llama 3.2 11b Vision \autocite{llama3.211bvision}, using the Groq \glsentryshort{api} to extract additional contextual information and insights. This integration enhances the system's analytical capabilities by providing detailed descriptions, identifying potential relationships between detected objects, and generating natural language summaries of the surveillance data.
+
+The \gls{llm} component receives the object detection data from the server with a specific prompt that the server operator wants to send and processes it to provide comprehensive analysis that includes object classification details, behavioral patterns, and potential security implications. This additional layer of intelligence helps operators make more informed decisions by providing context-rich information about the detected objects in real-time. The results from the \gls{llm} analysis are stored in the database and made available through the web interface, where they can be accessed alongside the original detection data and visual feeds.
+
+In \cref{fig:llm_detection}, an example of the \gls{llm} detection results for a person can be seen.
+
+\begin{figure}
+	\includegraphics{llm_detection.png}
+	\caption{Example of the LLM detection results for a detected object. In this case, the LLM correctly identified the clothes that the person is wearing as the prompt to the image was ``What is the person wearing?''.}\label{fig:llm_detection}
+\end{figure}
+
+\subsection{Integration}\label{subsec:implementation_integration}
+
+Finally, all the different components are integrated into the reconnaissance platform to provide a complete processing pipeline to be able to detect the different objects. In \cref{fig:architecture_reconnaissance_platform}, the complete architecture and pipeline can be seen and consists of several interconnected components:
+
+\begin{itemize}
+	\item \textbf{Drone Component:} Contains two primary elements:
+	      \begin{itemize}
+		      \item 360-degree camera for capturing omnidirectional video feed
+		      \item Object detection system running directly on the drone for initial processing
+	      \end{itemize}
+	\item \textbf{VPN Tunnel:} Provides a secure communication channel between the drone and the server infrastructure, ensuring encrypted data transmission.
+	\item \textbf{Server Infrastructure:} Comprises two main processing units:
+	      \begin{itemize}
+		      \item Object Detection module for secondary verification and processing
+		      \item Alert system for generating notifications based on detected events
+	      \end{itemize}
+	\item \textbf{LLM Integration:} The final component in the pipeline that:
+	      \begin{itemize}
+		      \item Processes detected objects through advanced language models
+		      \item Generates contextual insights and natural language descriptions
+		      \item Provides enhanced analytical capabilities for operators
+	      \end{itemize}
+\end{itemize}
+
+The data flow in this architecture follows a sequential pattern where the video feed from the 360-degree camera is first processed locally on the drone for initial object detection. This data is then transmitted through a secure VPN tunnel to the server infrastructure, where it undergoes additional processing and verification. The server component handles both the object detection confirmation and alert generation based on predefined rules and conditions. Finally, the processed data is passed to the LLM integration component, which provides advanced analysis and insights generation for the end-users through the web interface.
+
+This architecture ensures robust security through the VPN tunnel while maintaining efficient data processing and real-time analysis capabilities. The modular design allows for easy scaling and maintenance of individual components without affecting the overall system functionality.
+
+\begin{figure}
+	\includegraphics{architecture_reconnaissance_platform.png}
+	\caption{Architecture of the reconnaissance platform.} \label{fig:architecture_reconnaissance_platform}
+\end{figure}
+
