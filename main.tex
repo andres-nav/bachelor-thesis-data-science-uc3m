@@ -13,7 +13,7 @@
 \author{Andrés Navarro Pedregal}
 \degree{Data Science and Engineering and Telecommunication Technologies Engineering}
 \graduationyear{2024~--~2025}
-\supervisor{José Alberto Hernández Gutierrez}
+\supervisor{José Alberto Hernández Gutiérrez}
 \placeandyear{Leganés, 2025}
 
 \hypersetup{
@@ -40,9 +40,9 @@
 \blankpage%
 \chapter*{Abstract}
 
-this is an abstract
+This bachelor thesis presents the design, implementation, and testing of an autonomous drone system for non-terrestrial networks in remote areas. The project aims to provide researchers with an open-source, cost-effective solution for studying and deploying drone-based networks in challenging environments. The system consists of a modular \gls{uav}, a control station, and a reconnaissance platform. The \gls{uav} is designed to be easily customizable, using off-the-shelf components for accessibility and maintainability. It features autonomous flight capabilities and can carry various sensors for different applications. The control station allows real-time monitoring and control of the UAV, while the reconnaissance platform processes data collected by the drone using advanced computer vision and machine learning techniques. The system incorporates a 360-degree camera and on-board processing capabilities, enabling real-time object detection and tracking. Integration with large language models enhances the system's analytical capabilities, providing detailed insights about detected objects. Testing demonstrated the system's ability to fly autonomously, detect and analyze objects in real-time, and communicate data effectively over long distances. With a flight time of 30-40 minutes and a modular design, the developed system offers a versatile platform for applications such as surveillance, search and rescue, and environmental monitoring in remote areas.
 
-\textbf{Keywords:} keyword1, keyword2, keyword3
+\textbf{Keywords:} autonomous drones, non-terrestrial networks, remote areas, unmanned aerial vehicles, reconnaissance platform, object detection, deep learning
 
 \blankpage%
 
@@ -50,11 +50,27 @@ this is an abstract
 \begingroup
 \let\clearpage\relax % This temporarily disables \clearpage so the Agradecimientos chapter is on the same page
 
-Thanks
+First and foremost, I would like to express my sincere gratitude to my supervisor, Dr. José Alberto Hernández Gutiérrez, for the opportunity to work with him on this project. His guidance, expertise, and support have been invaluable throughout the development of this thesis.
+
+I would also like to extend my thanks to Tomás Martínez Cortés for his assistance and insights, which have greatly contributed to this work.
+
+My heartfelt appreciation goes to the Telematics Department of Universidad Carlos III de Madrid, especially to David Larrabeiti for his unwavering support since the beginning of my academic journey. I am grateful to all members of the department for creating a nurturing and stimulating environment for research and learning.
+
+Finally, I would like to thank my colleague Carlos de Quinto for his collaboration and support throughout this process. Your camaraderie and intellectual contributions have been instrumental in the completion of this thesis.
+
+To all those mentioned and to the many others who have supported me along the way, thank you for your encouragement, patience, and belief in my abilities. This work would not have been possible without you.
 
 \chapter*{Agradecimientos}
 
-Gracias
+En primer lugar, quiero expresar mi más sincero agradecimiento a mi supervisor, el Dr. José Alberto Hernández Gutiérrez, por la oportunidad de trabajar con él en este proyecto. Su orientación, experiencia y apoyo han sido invaluables durante todo el desarrollo de esta tesis.
+
+También me gustaría extender mi gratitud a Tomás Martínez Cortés por su asistencia y perspectivas, que han contribuido enormemente a este trabajo.
+
+Mi más profundo aprecio va para el Departamento de Telemática de la Universidad Carlos III de Madrid, especialmente a David Larrabeiti por su apoyo inquebrantable desde el inicio de mi trayectoria académica. Estoy agradecido a todos los miembros del departamento por crear un ambiente estimulante y enriquecedor para la investigación y el aprendizaje.
+
+Finalmente, me gustaría agradecer a mi colega Carlos de Quinto por su colaboración y apoyo durante todo este proceso. Tu camaradería y contribuciones intelectuales han sido fundamentales para la realización de esta tesis.
+
+A todos los mencionados y a los muchos otros que me han apoyado en el camino, gracias por su aliento, paciencia y fe en mis capacidades. Este trabajo no habría sido posible sin ustedes.
 
 \endgroup
 
@@ -79,7 +95,7 @@ Gracias
 
 \mainmatter%
 
-\oldpart{Introduction} % So there is no new page before the first chapter, thus the page number is correct
+\oldpart{Introduction} % This is the first part, so it is not preceded by a new page
 
 \input{src/motivation}
 \input{src/statement_of_problem}
@@ -87,29 +103,30 @@ Gracias
 \input{src/document_structure}
 \input{src/methodology_approach}
 
-\part{Theoretical Background}
+\part{Theoretical Background}\label{part:theoretical_background}
 
 \input{src/non_terrestrial_networks}
 \input{src/uav}
 \input{src/deep_learning}
 
-\part{State of the art}
+\part{State of the art}\label{part:state_of_the_art}
 
 \input{src/historical_development}
 \input{src/types_technologies_characteristics}
 \input{src/modern_trends}
 
-\part{Methodology}
+\part{Methodology}\label{part:methodology}
 
 \input{src/requirements}
 \input{src/design}
 \input{src/implementation}
 
-\part{Results}
+\part{Results}\label{part:results}
+
 \input{src/testing}
 \input{src/results}
 
-\part{Conclusions}
+\part{Conclusions}\label{part:conclusions}
 
 \input{src/conclusions}
 \input{src/future_work}
