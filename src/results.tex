@@ -1,0 +1,29 @@
+\chapter{Results}\label{ch:results}
+
+Finally after all the tests were done, the system was validated, and fully working, the results of the systems obtained are:
+
+\begin{itemize}
+	\item The drone is able to fly autonomously and detect objects in the environment.
+	\item The drone is able to communicated and send information to a server to receive real-time information.
+	\item The drone is able to have a 30 to 40 minutes of flight time.
+	\item Integration with \glspl{llm} make the system able to adapt to detect different characteristics of objects.
+	\item The drone is modular and can be easily repaired and maintained. Moreover, the drone is able to be easily modified to adapt to different applications.
+\end{itemize}
+
+With all this results obtained, the system checks all the requirements and objectives of the project, refer to \cref{ch:requirements} , and the system is able to be used in different applications, such as surveillance, search and rescue, and monitoring of different areas.
+
+For more videos demonstrating the system working, refer to the following links: \url{https://youtu.be/F1fDpXw-kBg}, \url{https://youtu.be/kdMgwRRte-8}, and \url{https://youtu.be/IqNsVOT3uFQ}.
+
+\section{Problems Encountered}\label{sec:problems_encountered}
+
+As the project is a proof of concept, there were some problems encountered during the development of the system. The main problems encountered were maily due to the nature of the project, as this project is a proof of concept, there were not previous projects to compare with, and the development of the system was done from scratch.
+
+The first problem encountered was the design and the selection of the components. In order to create a system that is able to detect objects in the environment and more importantly, to be able to have enough flight duration, the selection of the components was crucial. The selection of the components was done based on the requirements of the project, and the components were selected based on the cost, the availability, and the compatibility with the system. One problem was that at first a wrong type of \gls{esc} was chosen and it was not compatible to the current set up. And in the end, the correct type was selected, the Tmotor FLAME 100A LV 600Hz, refer to \cref{subsec:design_propulsion_system}.
+
+Another problem encountered was the placement of the components in the \gls{uav}. As the \gls{uav} has limitted space, the components had to be carfully place in order to have space and be stable during flight.
+
+Finally, multiple problems were confronted recarding the integration of all systems and the reconnaissance platform. Here, the libraries used to capture the camera live-feed had to be modified in order to be compatible to the Ricoh Theta X camera. Moreover, custom communication protocols and servers had to be developed in order to be able to send the information from the drone to the server and process the information in real-time.
+
+All in all, after multiple tests and iterations, the system was able to be fully working and the problems encountered were solved.
+
+

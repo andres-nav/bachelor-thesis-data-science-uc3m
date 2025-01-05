@@ -2,8 +2,6 @@
 
 For the \gls{uav} design, a simple and cost-effective design is chosen, with the ability to take off and land in remote areas with limited infrastructure. The \gls{uav} is designed to be modular, allowing for the integration of different sensors and payloads for different applications. The \gls{uav} is also designed to be autonomous, with the ability to take off, land, and navigate to a set of waypoints. The \gls{uav} is composed of the following components: the airframe, the propulsion system, the flight controller, the power system, and peripherals. The following sections describe the design of each of the components of the \gls{uav}, as well as the reasoning behind the choices made.
 
-\todo{add schematic of the \gls{uav}}
-
 \subsection{Airframe}\label{subsec:design_airframe}
 
 The airframe is the structure of the \gls{uav} that holds all the components together. The airframe must be lightweight, durable, and easy to assemble and disassemble. The airframe must also be able to carry the peripherals and additional components required for the reconnaissance tasks.
@@ -13,8 +11,8 @@ For the airframe, different designes are considered, such as fixed-wing, rotary-
 Rotary-wing designs are further divided into multi-rotor and single-rotor designs as seen in \cref{fig:rotary_wing_designs}. Multi-rotor designs are more stable and easier to control, while single-rotor designs are more efficient and have a longer flight time. For the \gls{uav} design, a quadcopter design is chosen, as it provides a good balance between stability and efficiency. The quadcopter design consists of four rotors, with two rotors spinning clockwise and two rotors spinning counterclockwise, which provides a stable and efficient flight.
 
 \begin{figure}
-  \includegraphics{rotary_wing_designs.png}
-  \caption{Rotary-wing designs. a. Multi-rotor design. b. Single-rotor design. \autocite{rotary_wing_designs}.}\label{fig:rotary_wing_designs}
+	\includegraphics{rotary_wing_designs.png}
+	\caption{Rotary-wing designs. a. Multi-rotor design. b. Single-rotor design. \autocite{rotary_wing_designs}.}\label{fig:rotary_wing_designs}
 \end{figure}
 
 For the material of the airframe, a lightweight and durable material is chosen, such as carbon fiber. For that case the airframe chosen is the Quad plegable Tarot XS690 \autocite{rcinnovationsQuadPlegable}. It is a quadcopter design made of carbon fiber, with a diameter of \SI{690}{\milli\meter} and a weight of \SI{675}{\gram}. The airframe is designed to carry different sensors and payloads, such as cameras, lidar, and thermal imaging sensors.
@@ -46,7 +44,3 @@ Furthermore, in order to provide the required power for \glspl{esc} of the \gls{
 The peripherals are the components that provide additional functionality to the \gls{uav}. The peripherals can be of different types, such as sensors, geo-location systems, cameras, lidar, thermal imaging sensors, etc. For reconnaissance tasks, usually cameras are chosen, as they provide the ability to collect images of the environment.
 
 For this \gls{uav}, a \gls{gps} module was integrated into the \gls{uav} to provide the ability to navigate autonomously through a set of waypoints. The \gls{gps} module chosen is the Holybro M9N GPS GNSS \autocite{rcinnovationsHolybroGNSS} as it provides \gls{gnss} capabilities, a satellite navigation system with global coverage, for a relatively low price. The \gls{gps} module is critical for the \gls{uav}, as it provides the ability to navigate autonomously through a set of waypoints, as well as the ability to return to the control station in case of loss of communication or other critical failures.
-
-% Local Variables:
-% jinx-local-words: "Holybro Pixhawk Tmotor aireframe ardupilotArduPilot rcinnovationsComprarBatera rcinnovationsHobbyWingUbec rcinnovationsPixhawkCarcasa rcinnovationsQuadPlegable rcinnovationsVariadorTmotor uav"
-% End:
