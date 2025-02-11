@@ -22,11 +22,20 @@ Autonomous \glspl{uav} can positively impact the environment by reducing fossil 
 
 Nonetheless, the environmental costs of manufacturing and disposing of \glspl{uav} must be considered. The production of lightweight materials like carbon fiber is energy-intensive, and lithium-ion batteries pose recycling challenges. Sustainable design practices are necessary to mitigate these effects.
 
+\section{Planning}
+
+The project was structured into distinct phases, each with specific activities and tasks, as illustrated in \cref{fig:planning}. The timeline for these phases was planned on a weekly basis, detailing the progression of activities from initial research to final flight tests. The first month and a half of the project was dedicated to understanding the problem, reviewing relevant literature, exploring the necessary tools, and configuring them for our specific needs. This initial phase, encompassing research and planning, required a significant time investment due to the complexities and documentation gaps associated with certain tools like Mission Planner or hardware integration. The subsequent five months were focused on building of the UAV and the development of the system and the final three months to writing the final document.
+
+\begin{figure}
+    \includegraphics{planning.png}
+    \caption{Gantt Chart for the Project Planning}\label{fig:planning}
+\end{figure}
+
 \section{Budget Analysis}\label{sec:budget_analysis}
 
 As previously mentioned, the cost of adopting autonomous drones is a significant hurdle. This section breaks down the expenses associated with purchasing and operating drones, categorized into manufacturing, operating, and additional costs. The analysis includes a detailed assessment of hardware components, maintenance, insurance, and other relevant expenses.
 
-Tables \cref{tab:manufacturing_costs_uav}, \cref{tab:manufacturing_costs_reconnaissance_platform}, \cref{tab:operating_costs}, and \cref{tab:other_costs} provide comprehensive cost breakdowns. The total cost, encompassing all categories, offers a clear picture of the financial investment needed for adopting drones in \glspl{ntn} applications. For this project, the total cost amounts to 6316 \euro, which includes the necessary hardware, software, and operational expenses. However, it does not account for human-related costs, such as training and salaries, which are essential for long-term sustainability.
+Tables \cref{tab:manufacturing_costs_uav}, \cref{tab:manufacturing_costs_reconnaissance_platform}, \cref{tab:operating_costs}, \cref{tab:other_costs}, and \cref{tab:human_costs} provide comprehensive cost breakdowns. The total cost, encompassing all categories, offers a clear picture of the financial investment needed for adopting drones in \glspl{ntn} applications. For this project, the total cost amounts to 20216 \euro, which includes the necessary hardware, software, development, and operational expenses. However, it does not account for maintenance costs, such as training and operator salaries, which are essential for long-term sustainability.
 
 In conclusion, while autonomous drones hold significant promise for remote areas and various industries, careful consideration of social, economic, and environmental factors is essential. Addressing these challenges with appropriate regulations and sustainable practices will maximize their potential benefits.
 
@@ -104,4 +113,20 @@ In conclusion, while autonomous drones hold significant promise for remote areas
         \bottomrule
     \end{tabular}
     \caption{Other costs.}\label{tab:other_costs}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{ l l l r }
+        \toprule
+		\textbf{Item}  & \textbf{Model}                           & \textbf{Quantity} & \textbf{Cost (\euro)} \\
+        \midrule
+        Personal Computer & Macbook Air & 1 & 1600  \\
+        Junior Engineer Hours & 15 \euro/h & 500 & 7500 \\
+        Senior Engineer Hours & 60 \euro/h & 40 & 2400 \\
+        Electricity, labs, climate control, management, etc. & & & 2040 \\
+        \midrule
+        \textbf{Total} & & & 13900 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Human costs.}\label{tab:human_costs}
 \end{table}
