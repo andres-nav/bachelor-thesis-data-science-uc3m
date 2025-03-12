@@ -2,7 +2,7 @@
 
 ## Title: Applications of Autonomous Drones for Non-Terrestrial Networks in Remote Areas
 
-![./figures/andres_navarro_presenting.jpg]
+![Andres Navarro Pedregal presenting](./figures/andres_navarro_presenting.jpg)
 
 ---
 
@@ -16,7 +16,7 @@ Here are some cool videos:
 
 You can find the latex template used [here](https://github.com/andres-nav/templates/blob/main/thesis_uc3m.sty).
 
-![./figures/andres_navarro_and_drone.jpg]
+![Andres Navarro Pedregal and the drone](./figures/andres_navarro_and_drone.jpg)
 
 ### Abstract
 
